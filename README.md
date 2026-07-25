@@ -1,31 +1,36 @@
-# DecodeLabs Project 1: Data Cleaning and Preparation Using Microsoft Excel
+# DecodeLabs Data Analytics Projects
+
+## Project Title
+
+### Project 1: Data Cleaning using Microsoft Excel
+Cleaned and prepared a raw e-commerce dataset by removing duplicates, handling missing values, and standardising data for analysis.
+
+### Project 2: Exploratory Data Analysis (EDA)
+Performed exploratory data analysis on the cleaned dataset to identify trends, calculate summary statistics, and generate meaningful business insights using Microsoft Excel.
+
+---
+
 ## Description
-This project was completed as part of the DecodeLabs Data Analytics Internship.
 
-The objective of this project is to clean and preprocess a raw e-commerce sales dataset using Microsoft Excel. The dataset was examined for missing values, duplicate records, and inconsistent data formats to improve its quality and prepare it for further analysis.
+These projects were completed as part of the **DecodeLabs Data Analytics Internship**. The workflow included data cleaning, preprocessing, and exploratory data analysis to prepare high-quality data for decision-making.
 
-The workbook contains two worksheets:
- **Raw_Data** – Original dataset before preprocessing.
- **Cleaned_data** – Final cleaned dataset ready for exploratory data analysis and reporting.
-### Key Data Cleaning Tasks
-- Removed duplicate records
-- Handled missing values
-- Standardized data formatting
-- Verified data consistency
-- Prepared the dataset for analysis
-### Tools Used
+**Tools Used:**
 - Microsoft Excel
+
+---
+
 ## How to Run
-1. Clone this repository:
+
+1. Clone the repository:
 ```bash
-git clone https://github.com/<julurimaneesha567-crypto>/DecodeLabs-Project-1.git
+git clone https://github.com/<julurimaneesha567-crypto>/DecodeLabs-Internship.git
 ```
-2. Open the project folder.
-3. Open the Excel workbook:
-```
-decode_labs project-1.xlsx
-```
-4. Review the **Raw_Data** worksheet to understand the original dataset.
-5. Open the **Cleaned_data** worksheet to view the cleaned dataset.
+
+2. Open the Excel files:
+- `decode_labs project-1.xlsx`
+- `Decode_labs project-2.xlsx`
+
+3. Explore the worksheets to view the data cleaning process and EDA analysis.
+
 
 
