@@ -1,0 +1,118 @@
+create database project3;                # Create a new database
+use project3;
+create table orders(                     # Create a table
+orderID int ,
+Date Date , 
+CustomerID varchar(20) ,
+Product varchar(100) ,
+Quantity int , 
+UnitPrice Decimal (10,2) ,
+ShippingAddress varchar(255) ,
+PaymentMethod varchar(50) ,
+OrderStatus varchar(50) ,
+TrackingNumber varchar(100) ,
+ItemIncart int ,
+CouponCode varchar(50) ,
+ReferralSource varchar(50) ,
+TotalPrice decimal(10,2) 
+);
+# import the data in mysql
+
+SELECT * FROM data;                    # show all the data
+
+SELECT Product, TotalPrice              # show only product and price
+FROM data;
+
+SELECT *                                #first 10 rows
+FROM data
+LIMIT 10;
+     
+SELECT *                                  #Orders above ₹500
+FROM data
+WHERE TotalPrice > 500;    
+
+SELECT *                                 # Paid using Credit Card
+FROM data
+WHERE PaymentMethod='Credit Card';      
+
+SELECT *                                 # Paid using Debit Card
+FROM data
+WHERE PaymentMethod='Debit Card';   
+
+SELECT *                                  #Delivered Orders
+FROM data
+WHERE OrderStatus='Delivered';  
+
+SELECT *                                   # Highest Price
+FROM data
+ORDER BY TotalPrice DESC; 
+  
+SELECT *                                   # Lowest price
+FROM data
+ORDER BY TotalPrice ASC;   
+
+SELECT COUNT(*) AS TotalOrders               # total count of orders
+FROM data;   
+
+SELECT COUNT(DISTINCT CustomerID)                #Number of Customers
+FROM data;    
+
+SELECT SUM(TotalPrice) AS Revenue            # total Revenue
+FROM data;  
+
+SELECT AVG(TotalPrice)                       # Average order value
+FROM data;     
+
+SELECT Product,                                 # Sales by product
+SUM(TotalPrice) AS Sales
+FROM data
+GROUP BY Product;              
+
+SELECT PaymentMethod,                           # Orders by payment method
+COUNT(*) AS Orders
+FROM data
+GROUP BY PaymentMethod;
+
+SELECT OrderStatus,                              # Revenue by order status
+SUM(TotalPrice) AS Revenue
+FROM data
+GROUP BY OrderStatus;
+
+SELECT Product,                                       # Highest selling product
+SUM(TotalPrice) AS Sales
+FROM data
+GROUP BY Product
+ORDER BY Sales DESC;
+
+SELECT Product,                                     #Products with sales greater than ₹10,000
+SUM(TotalPrice) AS Sales
+FROM data
+GROUP BY Product
+HAVING Sales > 10000;
+
+SELECT *                                 # top 5 expensive orders
+FROM data
+ORDER BY TotalPrice DESC
+LIMIT 5;
+
+SELECT CustomerID,                      # Orders per customer
+COUNT(*) AS Orders
+FROM data
+GROUP BY CustomerID
+ORDER BY Orders DESC;
+
+SELECT Product,                           # Average quantity sold per product
+AVG(Quantity) AS AvgQuantity
+FROM data
+GROUP BY Product;
+
+SELECT PaymentMethod,                       #Revenue by payment method
+SUM(TotalPrice) AS Revenue
+FROM data
+GROUP BY PaymentMethod
+ORDER BY Revenue DESC;
+
+SELECT ReferralSource,                         # Orders from each referral source
+COUNT(*) AS Orders
+FROM data
+GROUP BY ReferralSource;
